@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  database:
+    image: postgres:10
+    environment:
+      - POSTGRES_USER=pokedex
+      - POSTGRES_PASSWORD=pokedex
+    volumes:
+      - ./volumes/database:/var/lib/postgresql/data
+
+  back:
+    build: back/
+    environment:
+      - DB_HOST=database
+      - DB_USER=pokedex
+      - DB_PASSWORD=pokedex
+    ports:
+      - 8000:8000
+
+  front:
+    build: front/
+    environment:
+      - VUE_APP_API_URL=http://localhost:8000/
+    ports:
+      - 8080:80
