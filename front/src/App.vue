@@ -2,7 +2,7 @@
     <v-app>
         <v-app-bar
                 app
-                color="#ff928f"
+                color="#8fa3ff"
                 dark
                 shrink-on-scroll
                 prominent
@@ -12,7 +12,7 @@
             <template v-slot:img="{ props }">
                 <v-img
                         v-bind="props"
-                        gradient="to top right, rgba(255,146,143,.9), rgba(255,255,255,.2)"
+                        gradient="to top right, rgba(143,163,255,.9), rgba(255,255,255,.2)"
                 ></v-img>
             </template>
 
